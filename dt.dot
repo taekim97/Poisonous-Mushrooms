@@ -1,0 +1,24 @@
+digraph Tree {
+node [shape=box] ;
+0 [label="odor_n <= 0.5\nentropy = 0.9988\nsamples = 5416\nvalue = [2820, 2596]"] ;
+1 [label="bruises_f <= 0.5\nentropy = 0.6687\nsamples = 3048\nvalue = [533, 2515]"] ;
+0 -> 1 [labeldistance=2.5, labelangle=45, headlabel="True"] ;
+2 [label="stalk-root_c <= 0.5\nentropy = 0.9735\nsamples = 895\nvalue = [533, 362]"] ;
+1 -> 2 ;
+3 [label="entropy = 0.9288\nsamples = 552\nvalue = [190, 362]"] ;
+2 -> 3 ;
+4 [label="entropy = 0.0\nsamples = 343\nvalue = [343, 0]"] ;
+2 -> 4 ;
+5 [label="entropy = 0.0\nsamples = 2153\nvalue = [0, 2153]"] ;
+1 -> 5 ;
+6 [label="spore-print-color_r <= 0.5\nentropy = 0.2151\nsamples = 2368\nvalue = [2287, 81]"] ;
+0 -> 6 [labeldistance=2.5, labelangle=-45, headlabel="False"] ;
+7 [label="stalk-surface-below-ring_y <= 0.5\nentropy = 0.105\nsamples = 2319\nvalue = [2287, 32]"] ;
+6 -> 7 ;
+8 [label="entropy = 0.0186\nsamples = 2277\nvalue = [2273, 4]"] ;
+7 -> 8 ;
+9 [label="entropy = 0.9183\nsamples = 42\nvalue = [14, 28]"] ;
+7 -> 9 ;
+10 [label="entropy = 0.0\nsamples = 49\nvalue = [0, 49]"] ;
+6 -> 10 ;
+}
