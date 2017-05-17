@@ -1,24 +1,24 @@
 digraph Tree {
 node [shape=box] ;
-0 [label="odor_n <= 0.5\nentropy = 0.9988\nsamples = 5416\nvalue = [2820, 2596]"] ;
-1 [label="bruises_f <= 0.5\nentropy = 0.6687\nsamples = 3048\nvalue = [533, 2515]"] ;
+0 [label="odor_n <= 0.5\nentropy = 0.9987\nsamples = 5416\nvalue = [2824, 2592]"] ;
+1 [label="bruises_t <= 0.5\nentropy = 0.6633\nsamples = 3044\nvalue = [525, 2519]"] ;
 0 -> 1 [labeldistance=2.5, labelangle=45, headlabel="True"] ;
-2 [label="stalk-root_c <= 0.5\nentropy = 0.9735\nsamples = 895\nvalue = [533, 362]"] ;
+2 [label="entropy = 0.0\nsamples = 2147\nvalue = [0, 2147]"] ;
 1 -> 2 ;
-3 [label="entropy = 0.9288\nsamples = 552\nvalue = [190, 362]"] ;
-2 -> 3 ;
-4 [label="entropy = 0.0\nsamples = 343\nvalue = [343, 0]"] ;
-2 -> 4 ;
-5 [label="entropy = 0.0\nsamples = 2153\nvalue = [0, 2153]"] ;
-1 -> 5 ;
-6 [label="spore-print-color_r <= 0.5\nentropy = 0.2151\nsamples = 2368\nvalue = [2287, 81]"] ;
+3 [label="stalk-root_c <= 0.5\nentropy = 0.9789\nsamples = 897\nvalue = [525, 372]"] ;
+1 -> 3 ;
+4 [label="entropy = 0.9285\nsamples = 567\nvalue = [195, 372]"] ;
+3 -> 4 ;
+5 [label="entropy = 0.0\nsamples = 330\nvalue = [330, 0]"] ;
+3 -> 5 ;
+6 [label="spore-print-color_r <= 0.5\nentropy = 0.1983\nsamples = 2372\nvalue = [2299, 73]"] ;
 0 -> 6 [labeldistance=2.5, labelangle=-45, headlabel="False"] ;
-7 [label="stalk-surface-below-ring_y <= 0.5\nentropy = 0.105\nsamples = 2319\nvalue = [2287, 32]"] ;
+7 [label="stalk-surface-below-ring_y <= 0.5\nentropy = 0.0858\nsamples = 2324\nvalue = [2299, 25]"] ;
 6 -> 7 ;
-8 [label="entropy = 0.0186\nsamples = 2277\nvalue = [2273, 4]"] ;
+8 [label="entropy = 0.0144\nsamples = 2291\nvalue = [2288, 3]"] ;
 7 -> 8 ;
-9 [label="entropy = 0.9183\nsamples = 42\nvalue = [14, 28]"] ;
+9 [label="entropy = 0.9183\nsamples = 33\nvalue = [11, 22]"] ;
 7 -> 9 ;
-10 [label="entropy = 0.0\nsamples = 49\nvalue = [0, 49]"] ;
+10 [label="entropy = 0.0\nsamples = 48\nvalue = [0, 48]"] ;
 6 -> 10 ;
 }
