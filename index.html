@@ -11772,8 +11772,7 @@ div#notebook {
 <li><a href="#Support-Vector-Machines">Support Vector Machines</a></li>
 </ul>
 </li>
-<li><a href="#IV.-Analysis-and-Conclusions">Analysis and Conclusions</a></li>
-<li><a href="#V.-Further-Reading">Further Reading</a></li>
+<li><a href="#IV.-Conclusion">Conclusion</a></li>
 </ul>
 
 </div>
@@ -11793,7 +11792,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[44]:</div>
+<div class="prompt input_prompt">In&nbsp;[18]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
@@ -11831,10 +11830,11 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[45]:</div>
+<div class="prompt input_prompt">In&nbsp;[19]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">shrooms_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;mushrooms.csv&#39;</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">pd</span><span class="o">.</span><span class="n">set_option</span><span class="p">(</span><span class="s1">&#39;display.max_columns&#39;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+<span class="n">shrooms_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;mushrooms.csv&#39;</span><span class="p">)</span>
 <span class="n">shrooms_df</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
 </pre></div>
 
@@ -11846,7 +11846,7 @@ div#notebook {
 <div class="output">
 
 
-<div class="output_area"><div class="prompt output_prompt">Out[45]:</div>
+<div class="output_area"><div class="prompt output_prompt">Out[19]:</div>
 
 <div class="output_html rendered_html output_subarea output_execute_result">
 <div>
@@ -11864,7 +11864,9 @@ div#notebook {
       <th>gill-spacing</th>
       <th>gill-size</th>
       <th>gill-color</th>
-      <th>...</th>
+      <th>stalk-shape</th>
+      <th>stalk-root</th>
+      <th>stalk-surface-above-ring</th>
       <th>stalk-surface-below-ring</th>
       <th>stalk-color-above-ring</th>
       <th>stalk-color-below-ring</th>
@@ -11890,7 +11892,9 @@ div#notebook {
       <td>c</td>
       <td>n</td>
       <td>k</td>
-      <td>...</td>
+      <td>e</td>
+      <td>e</td>
+      <td>s</td>
       <td>s</td>
       <td>w</td>
       <td>w</td>
@@ -11914,7 +11918,9 @@ div#notebook {
       <td>c</td>
       <td>b</td>
       <td>k</td>
-      <td>...</td>
+      <td>e</td>
+      <td>c</td>
+      <td>s</td>
       <td>s</td>
       <td>w</td>
       <td>w</td>
@@ -11938,7 +11944,9 @@ div#notebook {
       <td>c</td>
       <td>b</td>
       <td>n</td>
-      <td>...</td>
+      <td>e</td>
+      <td>c</td>
+      <td>s</td>
       <td>s</td>
       <td>w</td>
       <td>w</td>
@@ -11962,7 +11970,9 @@ div#notebook {
       <td>c</td>
       <td>n</td>
       <td>n</td>
-      <td>...</td>
+      <td>e</td>
+      <td>e</td>
+      <td>s</td>
       <td>s</td>
       <td>w</td>
       <td>w</td>
@@ -11986,7 +11996,9 @@ div#notebook {
       <td>w</td>
       <td>b</td>
       <td>k</td>
-      <td>...</td>
+      <td>t</td>
+      <td>e</td>
+      <td>s</td>
       <td>s</td>
       <td>w</td>
       <td>w</td>
@@ -12000,7 +12012,6 @@ div#notebook {
     </tr>
   </tbody>
 </table>
-<p>5 rows × 23 columns</p>
 </div>
 </div>
 
@@ -12025,7 +12036,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[46]:</div>
+<div class="prompt input_prompt">In&nbsp;[20]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">poison</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;p&#39;</span><span class="p">,</span> <span class="s1">&#39;e&#39;</span><span class="p">]</span>
@@ -12086,7 +12097,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[47]:</div>
+<div class="prompt input_prompt">In&nbsp;[21]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">train_df</span><span class="p">,</span> <span class="n">test_df</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">shrooms_df</span><span class="p">,</span> <span class="n">test_size</span> <span class="o">=</span> <span class="mi">1</span><span class="o">/</span><span class="mi">3</span><span class="p">,</span> <span class="n">random_state</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span>
@@ -12110,7 +12121,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[48]:</div>
+<div class="prompt input_prompt">In&nbsp;[22]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">encoded_train</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">get_dummies</span><span class="p">(</span><span class="n">train_df</span><span class="p">,</span> \
@@ -12126,7 +12137,7 @@ div#notebook {
 <div class="output">
 
 
-<div class="output_area"><div class="prompt output_prompt">Out[48]:</div>
+<div class="output_area"><div class="prompt output_prompt">Out[22]:</div>
 
 <div class="output_html rendered_html output_subarea output_execute_result">
 <div>
@@ -12144,7 +12155,103 @@ div#notebook {
       <th>cap-surface_f</th>
       <th>cap-surface_g</th>
       <th>cap-surface_s</th>
-      <th>...</th>
+      <th>cap-surface_y</th>
+      <th>cap-color_b</th>
+      <th>cap-color_c</th>
+      <th>cap-color_e</th>
+      <th>cap-color_g</th>
+      <th>cap-color_n</th>
+      <th>cap-color_p</th>
+      <th>cap-color_r</th>
+      <th>cap-color_u</th>
+      <th>cap-color_w</th>
+      <th>cap-color_y</th>
+      <th>bruises_f</th>
+      <th>bruises_t</th>
+      <th>odor_a</th>
+      <th>odor_c</th>
+      <th>odor_f</th>
+      <th>odor_l</th>
+      <th>odor_m</th>
+      <th>odor_n</th>
+      <th>odor_p</th>
+      <th>odor_s</th>
+      <th>odor_y</th>
+      <th>gill-attachment_a</th>
+      <th>gill-attachment_f</th>
+      <th>gill-spacing_c</th>
+      <th>gill-spacing_w</th>
+      <th>gill-size_b</th>
+      <th>gill-size_n</th>
+      <th>gill-color_b</th>
+      <th>gill-color_e</th>
+      <th>gill-color_g</th>
+      <th>gill-color_h</th>
+      <th>gill-color_k</th>
+      <th>gill-color_n</th>
+      <th>gill-color_o</th>
+      <th>gill-color_p</th>
+      <th>gill-color_r</th>
+      <th>gill-color_u</th>
+      <th>gill-color_w</th>
+      <th>gill-color_y</th>
+      <th>stalk-shape_e</th>
+      <th>stalk-shape_t</th>
+      <th>stalk-root_b</th>
+      <th>stalk-root_c</th>
+      <th>stalk-root_e</th>
+      <th>stalk-root_r</th>
+      <th>stalk-surface-above-ring_f</th>
+      <th>stalk-surface-above-ring_k</th>
+      <th>stalk-surface-above-ring_s</th>
+      <th>stalk-surface-above-ring_y</th>
+      <th>stalk-surface-below-ring_f</th>
+      <th>stalk-surface-below-ring_k</th>
+      <th>stalk-surface-below-ring_s</th>
+      <th>stalk-surface-below-ring_y</th>
+      <th>stalk-color-above-ring_b</th>
+      <th>stalk-color-above-ring_c</th>
+      <th>stalk-color-above-ring_e</th>
+      <th>stalk-color-above-ring_g</th>
+      <th>stalk-color-above-ring_n</th>
+      <th>stalk-color-above-ring_o</th>
+      <th>stalk-color-above-ring_p</th>
+      <th>stalk-color-above-ring_w</th>
+      <th>stalk-color-above-ring_y</th>
+      <th>stalk-color-below-ring_b</th>
+      <th>stalk-color-below-ring_c</th>
+      <th>stalk-color-below-ring_e</th>
+      <th>stalk-color-below-ring_g</th>
+      <th>stalk-color-below-ring_n</th>
+      <th>stalk-color-below-ring_o</th>
+      <th>stalk-color-below-ring_p</th>
+      <th>stalk-color-below-ring_w</th>
+      <th>stalk-color-below-ring_y</th>
+      <th>veil-type_p</th>
+      <th>veil-color_n</th>
+      <th>veil-color_o</th>
+      <th>veil-color_w</th>
+      <th>veil-color_y</th>
+      <th>ring-number_n</th>
+      <th>ring-number_o</th>
+      <th>ring-number_t</th>
+      <th>ring-type_e</th>
+      <th>ring-type_f</th>
+      <th>ring-type_l</th>
+      <th>ring-type_n</th>
+      <th>ring-type_p</th>
+      <th>spore-print-color_b</th>
+      <th>spore-print-color_h</th>
+      <th>spore-print-color_k</th>
+      <th>spore-print-color_n</th>
+      <th>spore-print-color_o</th>
+      <th>spore-print-color_r</th>
+      <th>spore-print-color_u</th>
+      <th>spore-print-color_w</th>
+      <th>spore-print-color_y</th>
+      <th>population_a</th>
+      <th>population_c</th>
+      <th>population_n</th>
       <th>population_s</th>
       <th>population_v</th>
       <th>population_y</th>
@@ -12170,7 +12277,103 @@ div#notebook {
       <td>1</td>
       <td>0</td>
       <td>0</td>
-      <td>...</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
       <td>1</td>
       <td>0</td>
       <td>0</td>
@@ -12194,7 +12397,103 @@ div#notebook {
       <td>0</td>
       <td>0</td>
       <td>0</td>
-      <td>...</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
       <td>0</td>
       <td>1</td>
       <td>0</td>
@@ -12218,7 +12517,103 @@ div#notebook {
       <td>0</td>
       <td>0</td>
       <td>0</td>
-      <td>...</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
       <td>0</td>
       <td>0</td>
       <td>1</td>
@@ -12242,7 +12637,103 @@ div#notebook {
       <td>1</td>
       <td>0</td>
       <td>0</td>
-      <td>...</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
       <td>0</td>
       <td>0</td>
       <td>1</td>
@@ -12266,7 +12757,103 @@ div#notebook {
       <td>0</td>
       <td>0</td>
       <td>0</td>
-      <td>...</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
       <td>0</td>
       <td>0</td>
       <td>1</td>
@@ -12280,7 +12867,6 @@ div#notebook {
     </tr>
   </tbody>
 </table>
-<p>5 rows × 117 columns</p>
 </div>
 </div>
 
@@ -12303,7 +12889,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[49]:</div>
+<div class="prompt input_prompt">In&nbsp;[23]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Shrooms DF:</span><span class="se">\t\t</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">shrooms_df</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
@@ -12342,7 +12928,7 @@ Encoded Training Data:	 (5416, 117)
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[50]:</div>
+<div class="prompt input_prompt">In&nbsp;[24]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">shrooms_df</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
@@ -12356,7 +12942,7 @@ Encoded Training Data:	 (5416, 117)
 <div class="output">
 
 
-<div class="output_area"><div class="prompt output_prompt">Out[50]:</div>
+<div class="output_area"><div class="prompt output_prompt">Out[24]:</div>
 
 <div class="output_html rendered_html output_subarea output_execute_result">
 <div>
@@ -12374,7 +12960,9 @@ Encoded Training Data:	 (5416, 117)
       <th>gill-spacing</th>
       <th>gill-size</th>
       <th>gill-color</th>
-      <th>...</th>
+      <th>stalk-shape</th>
+      <th>stalk-root</th>
+      <th>stalk-surface-above-ring</th>
       <th>stalk-surface-below-ring</th>
       <th>stalk-color-above-ring</th>
       <th>stalk-color-below-ring</th>
@@ -12400,7 +12988,9 @@ Encoded Training Data:	 (5416, 117)
       <td>8124</td>
       <td>8124</td>
       <td>8124</td>
-      <td>...</td>
+      <td>8124</td>
+      <td>5644</td>
+      <td>8124</td>
       <td>8124</td>
       <td>8124</td>
       <td>8124</td>
@@ -12424,7 +13014,9 @@ Encoded Training Data:	 (5416, 117)
       <td>2</td>
       <td>2</td>
       <td>12</td>
-      <td>...</td>
+      <td>2</td>
+      <td>4</td>
+      <td>4</td>
       <td>4</td>
       <td>9</td>
       <td>9</td>
@@ -12448,7 +13040,9 @@ Encoded Training Data:	 (5416, 117)
       <td>c</td>
       <td>b</td>
       <td>b</td>
-      <td>...</td>
+      <td>t</td>
+      <td>b</td>
+      <td>s</td>
       <td>s</td>
       <td>w</td>
       <td>w</td>
@@ -12472,7 +13066,9 @@ Encoded Training Data:	 (5416, 117)
       <td>6812</td>
       <td>5612</td>
       <td>1728</td>
-      <td>...</td>
+      <td>4608</td>
+      <td>3776</td>
+      <td>5176</td>
       <td>4936</td>
       <td>4464</td>
       <td>4384</td>
@@ -12486,7 +13082,6 @@ Encoded Training Data:	 (5416, 117)
     </tr>
   </tbody>
 </table>
-<p>4 rows × 23 columns</p>
 </div>
 </div>
 
@@ -12508,7 +13103,7 @@ Encoded Training Data:	 (5416, 117)
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[51]:</div>
+<div class="prompt input_prompt">In&nbsp;[25]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">entropy</span> <span class="p">(</span><span class="n">df</span><span class="p">):</span>
@@ -12531,7 +13126,7 @@ Encoded Training Data:	 (5416, 117)
 <div class="output">
 
 
-<div class="output_area"><div class="prompt output_prompt">Out[51]:</div>
+<div class="output_area"><div class="prompt output_prompt">Out[25]:</div>
 
 
 <div class="output_text output_subarea output_execute_result">
@@ -12546,7 +13141,7 @@ Encoded Training Data:	 (5416, 117)
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[82]:</div>
+<div class="prompt input_prompt">In&nbsp;[26]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">num_rows</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">train_df</span><span class="p">)</span>
@@ -13018,7 +13613,7 @@ SUVORK5CYII=
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[81]:</div>
+<div class="prompt input_prompt">In&nbsp;[27]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Create new dataframes to hold counts</span>
@@ -13590,9 +14185,21 @@ kqSOMvRLkiRJktRR/w92ZFPyj765xwAAAABJRU5ErkJggg==
 </div>
 </div>
 </div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>The first classifier we're going to look at is a decision tree.</p>
+<p><a href='http://scikit-learn.org/stable/modules/tree.html'>Decision trees</a> are "a non-parametric supervised learning method used for classification".</p>
+<p>As a sample, let us initialize sklearn's DecisionTreeClassifier with a max_depth of 3. After initialization, let us fit our training data and export the decision tree to an image.</p>
+
+</div>
+</div>
+</div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[54]:</div>
+<div class="prompt input_prompt">In&nbsp;[28]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">y_train</span> <span class="o">=</span> <span class="n">encoded_train</span><span class="p">[</span><span class="s1">&#39;class&#39;</span><span class="p">]</span>
@@ -13632,13 +14239,35 @@ kqSOMvRLkiRJktRR/w92ZFPyj765xwAAAABJRU5ErkJggg==
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
+<p>As we can see, each node of the decision tree shows how many samples are at the node before branching. There are other information such as entropy and its branching feature.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="K-Fold-Cross-Validation">K-Fold Cross Validation<a class="anchor-link" href="#K-Fold-Cross-Validation">&#182;</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>One tricky thing about decision trees is determining the depth of the tree. If we let the tree grow for too much, we may run into <a href='https://en.wikipedia.org/wiki/Overfitting'>overfitting</a> our data. Overfitting may cause our decision tree classifier to do poorly when it comes to predicting test data because the classifier lose generality.</p>
+<p>One way to search for a optimal depth is to do a k-fold cross-validation with a range of max_depths to choose from. In a k-fold cross-validation, the data is split into k subsets so that k-1 subsets are used for testing and 1 subset is used for testing.</p>
+<p>By using <a href='http://scikit-learn.org/stable/modules/generated/sklearn.model_selection.GridSearchCV.html'>GridSearchCV</a>, we can do both a k-fold cross validation and also test different depth parameters.</p>
+
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[55]:</div>
+<div class="prompt input_prompt">In&nbsp;[29]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">k_fold_cv</span> <span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">Y</span><span class="p">,</span> <span class="n">classifier</span><span class="p">,</span> <span class="n">param_grid</span><span class="p">,</span> <span class="n">cv</span><span class="p">):</span>
@@ -13698,12 +14327,22 @@ Max-Depth: {&#39;max_depth&#39;: 12}
 </div>
 
 </div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>After running our grid search, we can see that a max_depth of 8 produced the most accurate predictions with a .99815 accuracy. Here below, we can see how our decision tree with max_depth set to 8.</p>
+
+</div>
+</div>
+</div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[56]:</div>
+<div class="prompt input_prompt">In&nbsp;[30]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">decision_tree</span> <span class="o">=</span> <span class="n">DecisionTreeClassifier</span><span class="p">(</span><span class="n">criterion</span> <span class="o">=</span> <span class="s1">&#39;entropy&#39;</span><span class="p">,</span> <span class="n">max_depth</span> <span class="o">=</span> <span class="mi">8</span><span class="p">)</span> <span class="c1"># min_samples_split=20, random_state=99)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">decision_tree</span> <span class="o">=</span> <span class="n">DecisionTreeClassifier</span><span class="p">(</span><span class="n">criterion</span> <span class="o">=</span> <span class="s1">&#39;entropy&#39;</span><span class="p">,</span> <span class="n">max_depth</span> <span class="o">=</span> <span class="mi">8</span><span class="p">)</span>
 <span class="n">decision_tree</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">x_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
 
 <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;assets/optimal.dot&quot;</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
@@ -13734,7 +14373,7 @@ Max-Depth: {&#39;max_depth&#39;: 12}
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[80]:</div>
+<div class="prompt input_prompt">In&nbsp;[31]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Retrieve training data again</span>
@@ -14222,7 +14861,7 @@ RU5ErkJggg==
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[91]:</div>
+<div class="prompt input_prompt">In&nbsp;[32]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Initialize Support Vector Classification</span>
@@ -14239,7 +14878,7 @@ RU5ErkJggg==
 <div class="output">
 
 
-<div class="output_area"><div class="prompt output_prompt">Out[91]:</div>
+<div class="output_area"><div class="prompt output_prompt">Out[32]:</div>
 
 
 <div class="output_text output_subarea output_execute_result">
@@ -14267,7 +14906,7 @@ RU5ErkJggg==
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[95]:</div>
+<div class="prompt input_prompt">In&nbsp;[33]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Perform classifications on sample</span>
@@ -14305,7 +14944,7 @@ RU5ErkJggg==
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[94]:</div>
+<div class="prompt input_prompt">In&nbsp;[34]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Return the mean accuracy on given test data and labels </span>
@@ -14347,22 +14986,20 @@ RU5ErkJggg==
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="IV.-Analysis-and-Conclusions">IV. Analysis and Conclusions<a class="anchor-link" href="#IV.-Analysis-and-Conclusions">&#182;</a></h1>
+<h1 id="IV.-Conclusion">IV. Conclusion<a class="anchor-link" href="#IV.-Conclusion">&#182;</a></h1>
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span> 
-</pre></div>
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Based on our test results, we can see that our machine learning classifiers can determine a mushroom's edibility quite accurately. We're excited to continue learning about data science and we hope to solve more real-world problems.</p>
+<p>Thank you, <a href='http://jpdickerson.com/'>Professor John Dickerson</a> for teaching us data science and igniting new interests.</p>
 
 </div>
 </div>
-</div>
-
 </div>
     </div>
   </div>
