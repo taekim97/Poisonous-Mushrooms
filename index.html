@@ -14852,6 +14852,17 @@ RU5ErkJggg==
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
+<p>By varying the maximum depth of the decision tree classifier as our model complexity hyperparameter, we observe the expected behavior of training loss decreasing with increase in complexity. However, the model appears to be robust to the perils of overfitting, as the loss in the test error also decreases to a negligible value with increasing complexity and does not increase afterward.</p>
+<p>According the rankings of the optimal depths obtained above, it would appear that each of the trials generated with max depth paramter greater than or equal to 8 resulted in identical trees, indicating that an optimal depth with no further necessary splits was reached within 8 steps. Those 8 splits appear to generalize very well, as practically no loss is experienced in the test set as well.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Support-Vector-Machines">Support Vector Machines<a class="anchor-link" href="#Support-Vector-Machines">&#182;</a></h2><p>Now, let's generate a support vector classification for edibility of mushrooms. This is very simple now that we've already separated our data into training and testing sets.</p>
 <p><a href="#https://en.wikipedia.org/wiki/Support_vector_machine">Support Vector Machines</a> are also supervised learning models which, given an input, classify it into discrete categories. SVMs are particularly useful when performing a binary classification, as we are here (<strong>p/e</strong>). They work by finding the hyperplane that splits the two classes with the largest margin. We will be using scikit-learn's <a href="#http://scikit-learn.org/stable/modules/generated/sklearn.svm.SVC.html">svm.SVC class</a>.</p>
 <p>First, initialize your classification and fit the training data:</p>
